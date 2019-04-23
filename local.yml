@@ -1,4 +1,4 @@
-- hosts: localhost
+- hosts: asriel
   become: true
   tasks:
     - name: Install htop
