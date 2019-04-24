@@ -1,5 +1,43 @@
-- hosts: asriel
+- hosts: localhost
   become: true
+  vars_files: "./vars.yml"
   tasks:
-    - name: Install htop
-      apt: name=htop
+    - name: Add apt keys
+      loop: "{{ apt_keys }}"
+      apt_key: 
+        url: "{{ item.url }}"
+        keyring: "{{ item.keyring }}"
+        id: "{{ item.id }}"
+    - name: Add apt repos
+      loop: "{{ apt_repos }}"
+      apt_repository: 
+        repo: "{{ item }}"
+    - name: Update apt cache
+      apt:
+        update_cache: yes
+    - name: Install standard packages
+      become: true
+      apt:
+        name: "{{ packages }}"
+        state: latest
+    - name: Install snaps
+      command: snap install "{{ item }}" --classic
+      loop: "{{ snaps }}"
+    - name: Set user opts
+      user:
+        name: will
+        shell: /bin/zsh
+        group: will
+        groups: [adm, cdrom, sudo, dip, plugdev, lpadmin, sambashare]
+    - name: Cloning oh-my-zsh
+      git:
+        repo: https://github.com/robbyrussell/oh-my-zsh
+        dest: ~/.oh-my-zsh
+      become: yes
+      become_user: will
+    - name: Creating new ~/.zshrc
+      copy:
+        src: ~/.oh-my-zsh/templates/zshrc.zsh-template
+        dest: ~/.zshrc
+      become: yes
+      become_user: will

@@ -1,0 +1,16 @@
+snaps:
+  - code
+  - discord
+packages:
+  - htop
+  - apt-transport-https
+  - riot-web
+  - zsh
+  - gitg
+apt_keys:
+  - url: "https://packages.riot.im/debian/riot-im-archive-keyring.gpg"
+    keyring: "/etc/apt/trusted.gpg.d/riot-im-archive-keyring.gpg"
+    id: 75741890063E5E9A46135D01C2850B265AC085BD
+
+apt_repos:
+  - "deb https://packages.riot.im/debian/ cosmic main"
