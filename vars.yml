@@ -1,5 +1,4 @@
 snaps:
-  - code
   - discord
 packages:
   - htop
@@ -7,6 +6,8 @@ packages:
   - riot-web
   - zsh
   - gitg
+  - sway
+  - dmenu
 apt_keys:
   - url: "https://packages.riot.im/debian/riot-im-archive-keyring.gpg"
     keyring: "/etc/apt/trusted.gpg.d/riot-im-archive-keyring.gpg"
@@ -14,3 +15,6 @@ apt_keys:
 
 apt_repos:
   - "deb https://packages.riot.im/debian/ cosmic main"
+
+apt_ppas:
+  - "ppa:samoilov-lex/sway"

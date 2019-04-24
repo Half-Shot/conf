@@ -1,0 +1,24 @@
+- name: Add apt keys
+  loop: "{{ apt_keys }}"
+  apt_key: 
+    url: "{{ item.url }}"
+    keyring: "{{ item.keyring }}"
+    id: "{{ item.id }}"
+- name: Add apt repos
+  loop: "{{ apt_repos }}"
+  apt_repository: 
+    repo: "{{ item }}"
+- name: Add ppas
+  command: add-apt-repository "{{ item }}"
+  loop: "{{ apt_ppas }}"
+- name: Update apt cache
+  apt:
+    update_cache: yes
+- name: Install standard packages
+  become: true
+  apt:
+    name: "{{ packages }}"
+    state: latest
+- name: Install snaps
+  command: snap install "{{ item }}" --classic
+  loop: "{{ snaps }}"

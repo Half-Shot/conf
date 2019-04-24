@@ -1,0 +1,13 @@
+{
+	"folders": [
+		{
+			"path": "."
+		}
+	],
+	"settings": {
+		"files.associations": {
+			"**/*.yml": "ansible",
+			"sway.config": "i3"
+		},
+	}
+}
