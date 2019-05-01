@@ -17,4 +17,9 @@
         - username: will
           visual_studio_code_extensions:
             - vscoss.vscode-ansible
-            - dcasella.i3
+            - dcasella.i3            - coolbear.systemd-unit-file
+    - role: geerlingguy.nodejs
+      nodejs_version: "11.x"
+      nodejs_npm_global_packages:
+        - "@bitwarden/cli"
+        - "tsc"
