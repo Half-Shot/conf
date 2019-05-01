@@ -1,0 +1,6 @@
+GDK_BACKEND=wayland
+SSH_AGENT_LAUNCHER=openssh
+SSH_AUTH_SOCK=/home/will/ssh-agent.socket
+
+# Because java is 💩
+_JAVA_AWT_WM_NONREPARENTING=1
