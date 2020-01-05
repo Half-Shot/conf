@@ -1,0 +1,14 @@
+- name: Ensure ~/.config/sway exists
+  file:
+    path: /home/will/.config/sway
+    owner: will
+    group: will
+    mode: u+rwx
+    state: directory
+- name: Ensure ~/.config/sway/config is up to date
+  copy: 
+    src: sway.config
+    dest: /home/will/.config/sway/config
+    owner: will
+    group: will
+    mode: u+rwx

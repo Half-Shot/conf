@@ -1,0 +1,12 @@
+- name: Ensure ~/.zshrc is correct
+  template:
+    src: zshrc
+    dest: /home/will/.zshrc
+    owner: will
+    group: will
+- name: Ensure oh-my-zsh is correct
+  git:
+    repo: https://github.com/robbyrussell/oh-my-zsh
+    dest: /home/will/.oh-my-zsh
+  become: yes
+  become_user: will

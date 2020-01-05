@@ -1,0 +1,7 @@
+- hosts: smolhalfy
+  roles: 
+    - users
+    - packages
+    - name: sway
+      tags: sway
+    - zsh
