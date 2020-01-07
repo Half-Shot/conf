@@ -2,6 +2,8 @@
   roles: 
     - users
     - packages
+    - name: scripts
+      tags: scripts
     - name: sway
       tags: sway
     - zsh

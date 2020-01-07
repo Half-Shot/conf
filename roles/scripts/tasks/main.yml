@@ -1,0 +1,16 @@
+- name: Ensure ~/.scripts exists
+  file:
+    path: /home/will/.scripts
+    owner: will
+    group: will
+    mode: u+rwx
+    state: directory
+
+- name: Ensure ~/.scripts/* is up to date
+  copy: 
+    src: "{{ item }}"
+    dest: "/home/will/.scripts/{{ item }}"
+    owner: will
+    group: will
+    mode: u+rwx
+  loop: "{{ scripts }}"
