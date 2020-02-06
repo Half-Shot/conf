@@ -1,0 +1,18 @@
+scripts:
+  - "screenshot.sh"
+
+
+zsh_theme: robbyrussell
+
+sway_outputs:
+    - name: HDMI-A-1
+      resolution: 1920x1080
+      position: 0,0
+      scale: 1
+    - name: HDMI-A-3
+      resolution: 1920x1080
+      position: 1920,0
+      scale: 1
+
+sway_background: /usr/share/backgrounds/gnome/Road.jpg
+sway_keymap: uk

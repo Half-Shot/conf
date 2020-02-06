@@ -1,0 +1,7 @@
+- name: Install pam_environment
+  copy:
+    src: pam_environment
+    dest: /home/will/.pam_environment
+    owner: will
+    group: will
+    mode: u+r

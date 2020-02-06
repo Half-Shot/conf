@@ -6,8 +6,8 @@
     mode: u+rwx
     state: directory
 - name: Ensure ~/.config/sway/config is up to date
-  copy: 
-    src: sway.config
+  template: 
+    src: sway.config.j2
     dest: /home/will/.config/sway/config
     owner: will
     group: will

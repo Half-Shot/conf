@@ -25,3 +25,6 @@ packages:
   - slurp
 
 zsh_theme: minimal
+
+sway_background: /usr/share/backgrounds/gnome/Road.jpg
+sway_keymap: us
