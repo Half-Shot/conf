@@ -15,4 +15,4 @@ sway_outputs:
       scale: 1
 
 sway_background: /usr/share/backgrounds/gnome/Road.jpg
-sway_keymap: uk
+sway_keymap: gb
