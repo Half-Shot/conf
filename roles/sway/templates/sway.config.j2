@@ -9,7 +9,7 @@ set $down j
 set $up k
 set $right l
 # Your preferred terminal emulator
-set $term gnome-terminal
+set $term {{ preferred_term }}
 # Your preferred application launcher
 # Note: it's recommended that you pass the final command to sway
 set $menu dmenu_path | dmenu | xargs swaymsg exec
@@ -49,19 +49,21 @@ floating_modifier $mod normal
 bindsym $mod+Shift+c reload
 
 bindsym $mod+Shift+e exec swaynag -t warning -m 'You pressed the exit shortcut. Do you really want to exit sway? This will end your Wayland session.' -b 'Yes, exit sway' 'swaymsg exit'
+
+bindsym $mod+l exec swaylock
 #
 # Moving around:
 #
     # Move your focus around
-    bindsym $mod+$left focus left
-    bindsym $mod+$down focus down
-    bindsym $mod+$up focus up
-    bindsym $mod+$right focus right
+    #bindsym $mod+$left focus left
+    #bindsym $mod+$down focus down
+    #bindsym $mod+$up focus up
+    #bindsym $mod+$right focus right
     # or use $mod+[up|down|left|right]
-    bindsym $mod+Left focus left
-    bindsym $mod+Down focus down
-    bindsym $mod+Up focus up
-    bindsym $mod+Right focus right
+    #bindsym $mod+Left focus left
+    #bindsym $mod+Down focus down
+    #bindsym $mod+Up focus up
+    #bindsym $mod+Right focus right
  
     bindsym $mod+Space floating toggle
 
@@ -128,8 +130,8 @@ bindsym $mod+Shift+e exec swaynag -t warning -m 'You pressed the exit shortcut. 
     # move focus to the parent container
     bindsym $mod+a focus parent
 
-gaps inner 10
-gaps outer 10
+gaps inner 3
+gaps outer 3
 smart_gaps on
 
 #
@@ -180,25 +182,32 @@ bar {
 
     # When the status_command prints a new line to stdout, swaybar updates.
     # The default just shows the current date and time.
-    status_command while date +'%Y-%m-%d %l:%M:%S %p'; do sleep 1; done
-    font pango:DejaVu Sans Mono 14
+    status_command /home/will/.config/sway/status.py
+    font {{ sway_font }}
 
 
-    colors {
-        statusline #FFAE70
-        background #34281E
-        inactive_workspace #34281E #34281E #FFAE70
-    }
+  colors {
+    background #735E61
+    statusline #F5DCE0
+    separator  #F5DCE0
+
+    focused_workspace  #FF883B #F93953 #FFFFFF
+    active_workspace   #FF883B #222222 #FFFFFF
+    inactive_workspace #333333 #222222 #888888
+    urgent_workspace   #F93953 #DE33AB #F4C2C9
+    binding_mode       #2F343A #900000 #FFFFFF
+  }
 }
 
-# class                 border  backgr. text    indicator child_border
-client.focused          #94080F #B70B14 #ffffff #E6020D   #B70B14
-client.focused_inactive #3D0003 #5f676a #ffffff #484e50   #5f676a
-client.unfocused        #3D0003 #222222 #888888 #292d2e   #222222
-client.urgent           #94080F #E6020D #ffffff #E6020D   #B70B14
-client.placeholder      #3D0003 #3D0003 #ffffff #000000   #3D0003
+# class                 border  bground text    indicator child_border
+client.focused          #FF883B #F93953 #F4C2C9 #DE33AB   #285577
+client.focused_inactive #333333 #FFAE7A #000000 #484E50   #5F676A
+client.unfocused        #333333 #FFC8A5 #000000 #292D2E   #222222
+client.urgent           #F93953 #DE33AB #F4C2C9 #900000   #900000
+client.placeholder      #F93953 #F93953 #F4C2C9 #000000   #0C0C0C
 
-client.background       #ffffff
+client.background       #FFFFFF
+
 
 
 
@@ -212,4 +221,7 @@ bindsym XF86AudioRaiseVolume exec pactl set-sink-volume @DEFAULT_SINK@ +5%
 bindsym XF86AudioLowerVolume exec pactl set-sink-volume @DEFAULT_SINK@ -5%
 bindsym XF86AudioMute exec pactl set-sink-mute @DEFAULT_SINK@ toggle
 
+# Start dunst
+exec --no-startup-id "dunst"
+ 
 include /etc/sway/config.d/*

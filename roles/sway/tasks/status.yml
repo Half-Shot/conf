@@ -1,0 +1,20 @@
+- name: Intall i3pystatus
+  pip:
+    name: i3pystatus
+    executable: pip3
+
+- name: Intall colour
+  pip:
+    name: colour
+    executable: pip3
+
+
+- name: Intall netifaces
+  pip:
+    name: netifaces
+    executable: pip3
+
+- name: Copy status
+  template:
+    src: status.py.j2
+    dest: /home/will/.config/sway/status.py

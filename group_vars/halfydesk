@@ -5,14 +5,42 @@ scripts:
 zsh_theme: robbyrussell
 
 sway_outputs:
-    - name: HDMI-A-1
-      resolution: 1920x1080
+    - name: DP-1
+      resolution: 3840x2160
       position: 0,0
       scale: 1
-    - name: HDMI-A-3
+    - name: HDMI-A-1
       resolution: 1920x1080
-      position: 1920,0
+      position: 3840,0
       scale: 1
 
-sway_background: /usr/share/backgrounds/gnome/Road.jpg
-sway_keymap: gb
+sway_background: /home/will/background.jpg
+sway_keymap: us
+sway_font: "pango:DejaVu Sans Mono 10C"
+distro: "debian"
+no_wm: True
+preferred_term: alacritty
+packages:
+  - sudo
+  - zsh
+  - mesa
+  - vulkan-intel
+  - git
+  - openvpn
+  - python
+  - networkmanager
+  - networkmanager-openvpn
+  - ssh
+  - code
+  - gitg
+  - sway
+  - swaylock
+  - mpv
+  - mpc
+  - firefox-developer-edition
+  - thunderbird
+  - alacritty
+  - riot-web
+  - bluez
+  - bluez-utils
+  - pulseaudio

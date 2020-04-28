@@ -1,5 +1,8 @@
 - hosts: halfydesk
-  roles: 
+  roles:
+    - locale
+    - packages
+    - users
     - name: scripts
       tags: scripts
     - name: sway

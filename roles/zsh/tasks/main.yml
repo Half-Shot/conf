@@ -4,6 +4,12 @@
     dest: /home/will/.zshrc
     owner: will
     group: will
+- name: Ensure ~/.zprofile is correct
+  template:
+    src: zprofile.j2
+    dest: /home/will/.zprofile
+    owner: will
+    group: will
 - name: Ensure oh-my-zsh is correct
   git:
     repo: https://github.com/robbyrussell/oh-my-zsh

@@ -1,0 +1,9 @@
+- name: Update cache
+  pacman:
+    update_cache: yes
+
+- name: Install standard packages
+  pacman:
+    name: "{{ packages }}"
+    state: latest
+  when: packages is defined

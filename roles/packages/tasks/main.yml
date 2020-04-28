@@ -1,67 +1,8 @@
-- name: Add apt keys
-  apt_key: 
-    url: "{{ item.url }}"
-    keyring: "{{ item.keyring }}"
-    id: "{{ item.id }}"
-  loop: "{{ apt_keys }}"
-  when: apt_keys is defined
-
-- name: Add apt repos
-  loop: "{{ apt_repos }}"
-  apt_repository: 
-    repo: "{{ item }}"
-  when: apt_repos is defined
-
-- name: Add ppas
-  apt_repository: 
-    repo: "{{ item }}"
-    state: present
-  loop: "{{ apt_ppas }}"
-  when: apt_ppas is defined
-
-- name: Install debs
-  become: true
-  apt:
-    deb: "{{ item }}"
-    state: present
-  loop: "{{ debs }}"
-  when: apt_ppas is defined
-
-- name: Update apt cache
-  apt:
-    update_cache: yes
-
-- name: Install standard packages
-  become: true
-  apt:
-    name: "{{ packages }}"
-    state: latest
-  when: packages is defined
-
-- name: Install snaps
-  command: snap install "{{ item }}" --classic
-  loop: "{{ snaps }}"
-  when: snaps is defined
-
-- name: Install flatpaks
-  flatpak:
-    name: "{{ item }}"
-  loop: "{{ paks }}"
-  when: paks is defined
-
-# - name: Install python packages
-#   pip:
-#     name: pygments
-#     executable: pip
-
-- name: Update existing packages
-  apt:
-    upgrade: safe
-
-- name: Remove useless packages from the cache
-  apt:
-    autoclean: yes
-
-- name: Remove dependencies that are no longer required
-  apt:
-    autoremove: yes
+- name: "Apt packages"
+  include_role:
+    name: "apt.yml"
+  when: distro == "debian"
+- name: "Pacman packages"
+  include_role:
+    name: "pacman.yml"
+  when: distro == "pacman"

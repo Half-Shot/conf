@@ -26,5 +26,8 @@ packages:
 
 zsh_theme: minimal
 
-sway_background: /usr/share/backgrounds/gnome/Road.jpg
+sway_background: /home/will/background.jpg
 sway_keymap: us
+sway_font: "pango:DejaVu Sans Mono 14"
+distro: "debian"
+preferred_term: gnome-terminal
