@@ -1,0 +1,12 @@
+- hosts: halfydesk
+  roles:
+    #- locale
+    - packages
+    - users
+    - name: scripts
+      tags: scripts
+    - name: sway
+      tags: sway
+    - zsh
+    - environment
+    - ssh-agent

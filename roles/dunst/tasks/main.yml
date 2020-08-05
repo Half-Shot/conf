@@ -1,4 +1,0 @@
-- name: Ensure dunst is installed
-  become: true
-  apt:
-    name: dunst

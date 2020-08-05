@@ -1,0 +1,44 @@
+scripts:
+  - "screenshot.sh"
+
+
+zsh_theme: robbyrussell
+
+sway_outputs:
+    - name: eDP-1
+      resolution: 3840x2160
+      position: 0,0
+      scale: 2
+
+sway_background: /home/will/background.jpg
+sway_keymap: us
+sway_font: "pango:DejaVu Sans Mono 10C"
+distro: "pacman"
+no_wm: True
+preferred_term: alacritty
+packages:
+  - sudo
+  - zsh
+  - mesa
+  - vulkan-intel
+  - git
+  - openvpn
+  - python
+  - networkmanager
+  - networkmanager-openvpn
+  - ssh
+  - code
+  - gitg
+  - sway
+  - swaylock
+  - mpv
+  - mpc
+  - firefox-developer-edition
+  - thunderbird
+  - alacritty
+  - riot-web
+  - bluez
+  - bluez-utils
+  - pulseaudio
+  - wl-clipboard
+  - alacritty
