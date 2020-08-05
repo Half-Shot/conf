@@ -11,11 +11,18 @@ interval = 20
 warning = 20.0
 alert = 10.0
 
+
 [[block]]
-block = "memory"
-display_type = "memory"
-format_mem = "{Mup}%"
-format_swap = "{SUp}%"
+block = "bluetooth"
+mac = "00:16:94:42:3A:0D"
+label = "Headphones"
+
+[[block]]
+block = "temperature"
+collapsed = false
+interval = 10
+format = "{min}° min, {max}° max, {average}° avg"
+chip = "*-isa-*"
 
 [[block]]
 block = "cpu"
@@ -27,6 +34,12 @@ interval = 1
 format = "{1m}"
 
 [[block]]
+block = "memory"
+display_type = "memory"
+format_mem = "{Mup}%"
+format_swap = "{SUp}%"
+
+[[block]]
 block = "sound"
 
 [[block]]
@@ -35,18 +48,6 @@ interval = 10
 format = "{percentage}% {time}"
 
 [[block]]
-block = "bluetooth"
-mac = "00:16:94:42:3A:0D"
-label = "Headphones"
-
-[[block]]
 block = "time"
 interval = 60
 format = "%a %d/%m %R"
-
-[[block]]
-block = "temperature"
-collapsed = false
-interval = 10
-format = "{min}° min, {max}° max, {average}° avg"
-chip = "*-isa-*"
