@@ -11,7 +11,7 @@ sway_outputs:
       scale: 2
 
 sway_background: /home/will/background.jpg
-sway_keymap: uk
+sway_keymap: gb
 sway_font: "pango:DejaVu Sans Mono 10C"
 distro: "pacman"
 no_wm: True
