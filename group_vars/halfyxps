@@ -45,3 +45,4 @@ packages:
   - xorg-server-xwayland
 
 status_netiface: wlp59s0
+status_battery: True

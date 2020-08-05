@@ -17,7 +17,7 @@ status.register("temp",
     format="{temp:.0f}°C",)
 
 # The battery monitor has many formatting options, see README for details
-{% if status_battey | default(false) %}
+{% if status_battery | default(false) %}
 status.register(
     'battery',
     interval=5,
@@ -51,7 +51,7 @@ status.register(
 # Note: the network module requires PyPI package netifaces
 status.register("network",
     interface="{{ status_netiface }}",
-    format_up="{v4cidr}",)
+    format_up="{v4cidr essid quality}",)
 
 # Shows disk usage of /
 # Format:
