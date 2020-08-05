@@ -3,3 +3,6 @@
 
 [halfydesk]
 localhost ansible_connection=local ansible_sudo=yes 
+
+[halfyxps]
+localhost ansible_connection=local ansible_sudo=yes 
