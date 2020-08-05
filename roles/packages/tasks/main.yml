@@ -1,8 +1,8 @@
 - name: "Apt packages"
-  include_role:
+  include_tasks:
     name: "apt.yml"
   when: distro == "debian"
 - name: "Pacman packages"
-  include_role:
+  include_tasks:
     name: "pacman.yml"
   when: distro == "pacman"
