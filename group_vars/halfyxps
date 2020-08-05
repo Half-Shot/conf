@@ -11,7 +11,7 @@ sway_outputs:
       scale: 2
 
 sway_background: /home/will/background.jpg
-sway_keymap: us
+sway_keymap: uk
 sway_font: "pango:DejaVu Sans Mono 10C"
 distro: "pacman"
 no_wm: True
@@ -43,6 +43,7 @@ packages:
   - wl-clipboard
   - alacritty
   - xorg-server-xwayland
+  - i3status-rust
 
 status_netiface: wlp59s0
 status_battery: True
