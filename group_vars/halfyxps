@@ -26,7 +26,7 @@ packages:
   - python
   - networkmanager
   - networkmanager-openvpn
-  - ssh
+  - openssh
   - code
   - gitg
   - sway
