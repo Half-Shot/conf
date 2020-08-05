@@ -3,4 +3,4 @@
     name: will
     shell: /bin/zsh
     group: will
-    groups: [will, cdrom, sudo, audio, dip, video, plugdev, netdev, bluetooth, scanner]
+    groups: [will, sudo, bluetooth]
