@@ -4,3 +4,5 @@
     shell: /bin/zsh
     group: will
     groups: [will, sudo, bluetooth]
+  become: yes
+  become_method: sudo
