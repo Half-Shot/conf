@@ -1,6 +1,7 @@
-- include_tasks:
-    name: "apt.yml"
+- name: "Apt packages"
+  include_tasks: "apt.yml"
   when: distro == "debian"
-- include_tasks:
-    name: "pacman.yml"
+
+- name: "Pacman packages"
+  include_tasks: "pacman.yml"
   when: distro == "pacman"
