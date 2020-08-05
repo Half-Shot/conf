@@ -42,3 +42,6 @@ packages:
   - pulseaudio
   - wl-clipboard
   - alacritty
+  - xorg-server-xwayland
+
+status_netiface: wlp59s0

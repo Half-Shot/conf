@@ -17,7 +17,21 @@ status.register("temp",
     format="{temp:.0f}°C",)
 
 # The battery monitor has many formatting options, see README for details
-
+{% if status_battey | default(false) %}
+status.register(
+    'battery',
+    interval=5,
+    format='{battery_ident}: [{status} ]{percentage_design:.2f}%',
+    alert=True,
+    alert_percentage=15,
+    status={
+        'DPL': 'DPL',
+        'CHR': 'CHR',
+        'DIS': 'DIS',
+        'FULL': '',
+    }
+)
+{% endif %}
 # This would look like this, when discharging (or charging)
 # ↓14.22W 56.15% [77.81%] 2h:41m
 # And like this if full:
@@ -36,7 +50,7 @@ status.register("temp",
 #
 # Note: the network module requires PyPI package netifaces
 status.register("network",
-    interface="enp0s31f6",
+    interface="{{ status_netiface }}",
     format_up="{v4cidr}",)
 
 # Shows disk usage of /

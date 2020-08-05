@@ -44,3 +44,6 @@ packages:
   - bluez
   - bluez-utils
   - pulseaudio
+  - xorg-server-xwayland
+
+status_netiface: enp0s31f6
